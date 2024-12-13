@@ -1,0 +1,21 @@
+{
+  "name": "leetcode",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "leetcode": "ts-node src/LeetCode.ts",
+    "tsx": "tsx"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1"
+  },
+  "dependencies": {
+    "tsx": "^4.19.2"
+  }
+}
