@@ -1,5 +1,5 @@
 /*
-    Problem: FizzBuzz
+    Problem: Two Sum
 
     #1 => Create a Function which takes a number as an argument
     #2 => Create an Empty Array and Push Elements to it
@@ -10,7 +10,23 @@
     #7 => Return the Looped Number 
 */
 
+const nums = [3,2,4];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function fizzBuzz(n: number): string[] {
     let result: string[] = [];
 
@@ -34,15 +50,17 @@ function fizzBuzz(n: number): string[] {
 
 
 // n = 3 => ["1","2","Fizz"]
-fizzBuzz(3); 
+console.log(fizzBuzz(3)); 
 
 // n = 5 => ["1","2","Fizz","4","Buzz"]
-fizzBuzz(5); 
+console.log(fizzBuzz(5));
 
 // n = 15 => ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
-fizzBuzz(15); 
+console.log(fizzBuzz(15)); 
 
 
 // Big-O
 // Time Complexity: O(n) => O of N
 // Space Complexity: O(n) => O of N
+
+*/
