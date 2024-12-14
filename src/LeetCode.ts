@@ -1,21 +1,38 @@
 /*
     Problem: Two Sum
 
-    #1 => Create a Function which takes a number as an argument
-    #2 => Create an Empty Array and Push Elements to it
-    #3 => Loop from 1 to the given number
-    #4 => Return "Fizz" if the given number is divided by 3
-    #5 => Return "Buzz" if the given number is divided by 5
-    #6 => Return "FizzBuzz" if the given number is divided by both 3 & 5
-    #7 => Return the Looped Number 
+    #1 => Create a Function which takes two arguments (an array of numbers and a target number)
+    #2 => Create two nested "for" Loops 
+    #3 => Check if the current index array plus the next index array is equal to the target number
+    #4 => If the above condition is true, then return the index of them within an array
 */
 
-const nums = [3,2,4];
+
+const twoSum = (nums: number[], target: number): number[] => {
+    for(let i = 0; i < nums.length; i++) {
+        for(let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                return [i, j];
+            }
+        }
+    }
+
+    return [];
+}
+
+// nums = [2,7,11,15], target = 9 👉🏻 [0,1]
+twoSum([2,7,11,15], 9); 
+
+// nums = [3,2,4], target = 6 👉🏻 [1,2]
+twoSum([3,2,4], 6);
+
+// nums = [3,3], target = 6 👉🏻 [0,1]
+twoSum([3,3], 6); 
 
 
-
-
-
+// Big-O
+// Time Complexity: O(n^2) => O of N squared
+// Space Complexity: O(n^2) => O of N squared
 
 
 
