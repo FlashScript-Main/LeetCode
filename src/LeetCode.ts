@@ -1,5 +1,5 @@
 /*
-    Problem: Two Sum
+    Problem: Valid Anagram
 
     #1 => Create a Function which takes two arguments (an array of numbers and a target number)
     #2 => Create two nested "for" Loops 
@@ -7,13 +7,38 @@
     #4 => If the above condition is true, then return the index of them within an array
 */
 
+const sortString = (str: string) => {
+    return str.split("").sort().join("");
+}
 
+const isAnagram = (s: string, t: string) => {
+    
+    if (sortString(s) === sortString(t)) {
+        return true;
+    } else {
+        return false;
+    }
+    // return s.split("").sort().join("") === t.split("").sort().join("");
+
+}
+
+isAnagram("rat", "car");
+
+
+
+
+/*
 const twoSum = (nums: number[], target: number): number[] => {
+    const map = new Map();
+
     for(let i = 0; i < nums.length; i++) {
-        for(let j = i + 1; j < nums.length; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i, j];
-            }
+        const difference = target - nums[i];
+
+        if (map.has(difference)) {
+            return [map.get(difference), i];
+        }
+        else {
+            map.set(nums[i], i)
         }
     }
 
@@ -31,18 +56,9 @@ twoSum([3,3], 6);
 
 
 // Big-O
-// Time Complexity: O(n^2) => O of N squared
-// Space Complexity: O(n^2) => O of N squared
-
-
-
-
-
-
-
-
-
-
+// Time Complexity: O(n) => O of N
+// Space Complexity: O(n) => O of N
+*/
 /*
 function fizzBuzz(n: number): string[] {
     let result: string[] = [];
