@@ -1,12 +1,57 @@
 /*
-    Problem: Reverse String
+    Problem: Valid Palindrome (Two Pointers)
 
-    #1 => Create a Function which takes an arguments of Array of strings
-    #2 => Create two variables to become a CheckPoint of First and Last Index
-    #3 => Change the Array Elements from start index to end index using while Loop
+    #1 => Create a Function which takes an argument of string
+    #2 => Converting all uppercase letters into lowercase letters 
+    #3 => Remove all non-alphanumeric characters
+    #4 => Compare the string and Reversed string
 */
 
 
+function isPalindrome(s: string): boolean {
+    let l: number = 0;              // left
+    let r: number = s.length - 1;   // right
+    
+    while (l < r) {
+        while (l < r && !isAlphanumeric(s[l])) l++;
+        while (l < r && !isAlphanumeric(s[r])) r--;
+        
+        if (s[l].toLowerCase() !== s[r].toLowerCase()) return false;
+        l++;
+        r--;
+    }
+    return true;
+}
+
+function isAlphanumeric(char: string): boolean {
+    return /[a-zA-Z0-9]/.test(char);
+}
+
+// s = "A man, a plan, a canal: Panama" 👉🏻 true
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+
+// s = "race a car" 👉🏻 false
+console.log(isPalindrome("race a car"));
+
+// s = " " 👉🏻 true
+console.log(isPalindrome(" "));
+
+
+// Big-O
+// Time Complexity: O(n) => O of N
+// Space Complexity: O(1) => O of 1
+
+
+
+
+
+// TypeScript
+
+
+
+
+
+/*
 // Easy Method (NOT with Space-Complexity of O(1))
 // const reverseString = (s: string[]) => {
 //     return s.reverse();
@@ -41,6 +86,7 @@ console.log(s2);
 // Big-O
 // Time Complexity: O(n) => O of N
 // Space Complexity: O(1) => O of 1
+*/
 
 
 /*
