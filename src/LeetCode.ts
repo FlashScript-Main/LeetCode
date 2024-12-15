@@ -1,30 +1,77 @@
 /*
-    Problem: Valid Anagram
+    Problem: Reverse String
 
-    #1 => Create a Function which takes two arguments (an array of numbers and a target number)
-    #2 => Create two nested "for" Loops 
-    #3 => Check if the current index array plus the next index array is equal to the target number
-    #4 => If the above condition is true, then return the index of them within an array
+    #1 => Create a Function which takes an arguments of Array of strings
+    #2 => Create two variables to become a CheckPoint of First and Last Index
+    #3 => Change the Array Elements from start index to end index using while Loop
 */
 
+
+// Easy Method (NOT with Space-Complexity of O(1))
+// const reverseString = (s: string[]) => {
+//     return s.reverse();
+// }
+
+// console.log(reverseString(["h","e","l","l","o"]));
+
+
+const reverseString = (s: string[]) => {
+    let start = 0;
+    let end = s.length - 1;
+
+    while (start <= end) {
+        [s[start], s[end]] = [s[end], s[start]];
+
+        start++;
+        end--;
+    }
+}
+
+// s = ["h","e","l","l","o"] 👉🏻 ["o","l","l","e","h"]
+const s1 = ["h","e","l","l","o"];
+reverseString(s1)
+console.log(s1);
+
+// s = ["H","a","n","n","a","h"] 👉🏻 ["h","a","n","n","a","H"]
+const s2 = ["H","a","n","n","a","h"];
+reverseString(s2)
+console.log(s2);
+
+
+// Big-O
+// Time Complexity: O(n) => O of N
+// Space Complexity: O(1) => O of 1
+
+
+/*
 const sortString = (str: string) => {
     return str.split("").sort().join("");
 }
 
 const isAnagram = (s: string, t: string) => {
     
+    // Simple Way 👇🏻
+    // return s.split("").sort().join("") === t.split("").sort().join("");
+
     if (sortString(s) === sortString(t)) {
         return true;
     } else {
         return false;
     }
-    // return s.split("").sort().join("") === t.split("").sort().join("");
 
 }
 
+// s = "anagram", t = "nagaram" 👉🏻 true
+isAnagram("anagram", "nagaram"); 
+
+// s = "rat", t = "car" 👉🏻 false
 isAnagram("rat", "car");
 
 
+// Big-O
+// Time Complexity: O(n log n) => O of N log N
+// Space Complexity: O(n) => O of N
+*/
 
 
 /*
